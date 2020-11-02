@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  height: 75px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+
+  .header__title {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 0 0 80px;
+    text-transform: uppercase;
+    align-self: center;
+  }
+}
