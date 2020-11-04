@@ -11,3 +11,9 @@
     align-self: center;
   }
 }
+
+@media (max-width: 1390px) {
+  .header .header__title {
+    margin-left: 4%;
+  }
+}

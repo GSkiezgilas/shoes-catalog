@@ -1,3 +1,5 @@
+@import '../scss/base';
+
 .catalog {
   display: flex;
   flex-direction: column;
@@ -8,35 +10,51 @@
 
   .catalog__title {
     font-weight: 500;
-    font-size: 25px;
+    font-size: $headersSize;
     margin: 30px 0 0 0;
   }
 
-  .search-wrapper {
-    margin: 30px 0 0 0;
+  .search-sort-wrapper {
     display: flex;
     flex-wrap: wrap;
+    margin: 30px 0 0 0;
     justify-content: space-between;
 
-    .search {
-      border: 1px solid #777777;
-      border-radius: 5px;
-      height: 48px;
-      font-size: 20px;
-      padding: 0 19px;
-      margin: 0 0 30px 0;
-      width: 453px;
+    .search-bar {
+      padding: 1px;
+      position: relative;
     }
     
-    .search::placeholder {
+    .search-bar, .sort {
+      border: 1px solid $searchGrey;
+      border-radius: 5px;
+      margin: 0 0 30px 0;
+      
+    }
+
+    .search-input {
+      height: 44px;
+      border: none;
+      font-size: 20px;
+      padding: 0 0 0 52px;
+      width: 449px;
+    }
+    
+    .search-icon {
+      font-size: 18px;
+      position: absolute;
+      top: 15px;
+      left: 19px;
+      color: $searchGrey;
+    }
+    
+    .sort, .search-input::placeholder {
       font-size: 15px;
     }
     
     .sort {
-      border: 1px solid #777777;
-      border-radius: 5px;
+      color: $searchGrey;
       height: 48px;
-      margin: 0 0 30px 0;
       padding: 0 0 0 16px;
       width: 330px;
     }
@@ -61,9 +79,60 @@
     width: 100%;
   }
 
-  .selected-product-wrapper {
-    margin-top: auto;
+  .selected-product__wrapper {
+    background-color: $darkgrey;
+    display: flex;
+    flex-direction: column;
     height: 319px;
-    background-color: #e7e7e7;
+    width: 100%;
+    align-items: center;
+    margin-top: auto;
+
+    .selected-product__title {
+      font-size: $headersSize;
+      margin: 40px 0;
+    }
+
+    .selected-product_prevent-shrink {
+      display: flex;
+      width: 100%;
+      flex: 0 1 453px;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 1390px) {
+  .catalog {
+    align-items: center;
+    max-width: 900px;
+    padding: 0;
+
+    .search-sort-wrapper {
+      justify-content: center;
+      width: 320px;
+      
+      .search-bar, .sort {
+        flex: 0 1 280px;
+      }
+
+      .search-input {
+        width: 100%;
+      }
+    }
+    
+    .product-grid {
+      justify-content: center;
+      padding: 0 2%;
+    }
+    
+    .selected-product__wrapper {
+      padding: 0 2%;
+      width: 100%;
+
+      .selected-product__title {
+        text-align: center;
+      }
+    }
   }
 }

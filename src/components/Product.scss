@@ -1,12 +1,18 @@
+@import '../scss/base';
+
 .product-card {
-  background-color: #fafafa;
-  border: 1px solid #d0d0d0;
+  background-color: $lightGrey;
+  border: 1px solid $cardBorderGrey;
   border-radius: 5px;
   display: flex;
   height: 170px;
   margin: 0 0 40px 0;
-  width: 453px;
+  flex: 0 1 453px;
   overflow: hidden;
+
+  :hover {
+    cursor: pointer;
+  }
 
   .product-card__image-wrapper {
     border-radius: 5px 0 0 5px;
@@ -40,24 +46,39 @@
   }
 
   .product-card__regular-price {
-    color: #777777;
+    color: $searchGrey;
     display: inline-block;
     font-size: 13px;
     font-weight: 700;
     margin: 0 20px 0 0;
     text-decoration: line-through;
-    width: 52px;
+    width: 54px;
   }
 
   .product-card__final-price {
-    background-color: #ff0000;
+    background-color: $red;
     border-radius: 3px;
-    color: #ffffff;
+    color: $white;
     display: inline-block;
     font-size: 15px;
     font-weight: 700;
     padding: 4px 6px;
     text-align: center;
-    width: 71px;
+    width: 73px;
+  }
+}
+
+.product-card_active {
+  border: 3px solid $red;
+}
+
+@media (max-width: 1390px) {
+  .product-card {
+    margin: 0 0 15px 0;
+
+    .product-card__text-wrapper {
+      padding: 20px 5px 26px 20px;
+      width: 250px;
+    }
   }
 }
