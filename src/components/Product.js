@@ -23,10 +23,9 @@ const Product = ({product, handleClick, selectedProduct}) => {
         <div className="product-card__brand">{product.brand}</div>
         <div className="product-card__title">{product.title}</div>
         <div className="product-card__price-wrapper">
-          {!product.hasDiscount 
-            ? <span></span>
-            : <span className="product-card__regular-price">{product.price.regularPrice} {curencySymbol}</span>
-          }
+          {product.hasDiscount && (
+            <span className="product-card__regular-price">{product.price.regularPrice} {curencySymbol}</span>
+          )}
           <span className="product-card__final-price">{product.price.finalPrice} {curencySymbol}</span>
         </div>
       </div>
