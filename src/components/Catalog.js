@@ -72,22 +72,18 @@ const Catalog = () => {
   });
 
   const renderSelectedCard = selectedProduct => {
-    if (selectedProduct !== null) {
       return (
-        <>
-          <h3 className="selected-product__title">{selectedProduct.title}</h3>
-          <ul className="selected-product_prevent-shrink">
-            <ProductCard product={selectedProduct}
-              handleClick={unselectProduct}
-            />
-          </ul>
-        </>
+        selectedProduct && (
+          <>
+            <h3 className="selected-product__title">{selectedProduct.title}</h3>
+            <ul className="selected-product_prevent-shrink">
+              <ProductCard product={selectedProduct}
+                handleClick={unselectProduct}
+              />
+            </ul>
+          </>
+        )
       )
-    } else {
-      return (
-        <div></div>
-      )
-    }
   }
 
   return(
